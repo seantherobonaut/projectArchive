@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Layout test</title>
+		<style type="text/css">
+			*
+			{
+				margin:0px;
+				padding:0px;
+				font-size:0px;
+				box-sizing: border-box;
+			}
+
+			.text {font-size: 16px;}
+
+			body
+			{
+				padding:10px;
+			}
+
+			.wrapper
+			{
+				width:100%;
+				max-width: 1000px;
+				border:1px solid gray;
+				margin:auto;
+			}
+
+			.box
+			{
+				border:1px solid gray;
+				min-height: 30px;
+				display: inline-block;
+				vertical-align: top;
+			}
+
+			.innerBox
+			{
+				width:100px;
+				display: inline-block;
+				
+			}
+
+			.a
+			{
+				background-color: red;
+			}
+
+			.b
+			{
+				background-color: green;
+			}
+
+			.c
+			{
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="box" style="width:calc(100% - 102px);">
+				<div class="box" style="width:calc(100% - 102px);min-width:68%;max-width:100px">
+					<div class="innerBox a text" style="width:98%">Hello world!</div>
+				</div>
+				<div class="innerBox b text">Hello world!</div>
+			</div>
+			<div class="box">
+				<div class="innerBox c text">Hello world!</div>
+			</div>
+		</div>
+	</body>
+</html>

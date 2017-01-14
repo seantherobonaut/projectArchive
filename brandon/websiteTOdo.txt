@@ -1,0 +1,18 @@
+the page loads content even if it isn't there
+store page in variable? or if file doesn't exist load nothing?
+...test with changes...
+
+Brandon:
+home page -> news page
+content go to about
+
+Studio page
+update pictures with descriptions in columns
+
+productions page
+album cover large image on left
+song list on the right
+
+about page > about scary room
+
+put brandon specifically sepearate new content

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <style type="text/css">
+            body, html
+            {
+                margin:0;
+                padding:0;
+                font-family: arial;
+            }
+
+            #mainNavbar
+            {
+                border:1px dotted gray;
+                border-width:1px 0px;
+                background-color:#EAEAEA;
+                position:relative;
+                min-height: 40px;
+            }
+
+            .menu
+            {
+                display: block;
+                font-size: 0px;
+                border:1px dotted gray;
+                background-color:#EAEAEA;
+                margin:10px;
+            }
+
+            .menu, .menu ul
+            {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .menu > li
+            {
+                display: inline-block;
+            }
+
+            .menu a
+            {
+                display: inline-block;
+                color: black;
+                text-align: center;
+                padding: 10px 15px;
+                text-decoration: none;
+                font-size: 15px;
+            }
+
+            .menu a:hover
+            {
+                color:red;
+            }
+
+            .subMenuItem
+            {
+                display: none;
+                position: absolute;
+                background-color:#EAEAEA;
+                border:1px dotted gray;
+                border-top-width: 1px;
+            }
+
+            .menuItem:hover .subMenuItem
+            {
+                display: block;
+            }
+
+            #mobileMenu
+            {
+                display: none;
+            }
+
+            @media screen and (max-width: 865px)
+            {
+                #mobileMenu
+                {
+                    display: block;
+                }
+
+                .menu
+                {
+                    display: none;
+                }
+
+                .menu > li
+                {
+                    display: block;
+                }
+
+                .subMenuItem
+                {
+                    border-top-width:1px;
+                }
+
+                .subMenuItem > .menuItem2
+                {
+                    position: static;
+                    margin-left:20px;
+                }
+
+                button:hover .menu
+                {
+                    display: inline-block;
+                }
+            }
+
+            button
+            {
+                cursor: default;
+                text-align: left;
+                border:1px solid #EAEAEA;
+                background:none;
+                width:100%;
+                padding:0px;
+            }
+        </style>
+    </head>
+    <body>
+                    <ul class="menu">
+                        <li class="menuItem">
+                            <a href="https://www.fashionfatale.com/store/?step=store&amp;id=439">Men</a>
+                            <ul class="subMenuItem" style="border-left-width:0px">
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=445">Polos</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=446">Shirts</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=1045">Sweaters</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=449">Windwear</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=1053">Hoodies</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=450">Outerwear</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=448">Tall Sizes</a></li>
+                            </ul>
+                        </li>
+                        <li class="menuItem">
+                            <a href="https://www.fashionfatale.com/store/?step=store&amp;id=440">Women</a>
+                            <ul class="subMenuItem" style="border-width:30px;margin:10px">
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=474">Shirts</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=475">Polos</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=476">T-Shirts</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=1052">Sweatshirts</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=477">Hoodies</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=478">Sweaters</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=479">Outerwear</a></li>
+                            </ul>
+                        </li>
+                        <li class="menuItem">
+                            <a href="https://www.fashionfatale.com/store/?step=store&amp;id=934">Youth</a>
+                            <ul class="subMenuItem">
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=1055">Shirts</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=1056">Hoodies</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=1057">Jackets</a></li>
+                            </ul>
+                        </li>
+                        <li class="menuItem">
+                            <a href="https://www.fashionfatale.com/store/?step=store&amp;id=441">Activewear</a>
+                            <ul class="subMenuItem">
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=693">Men</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=1083">Women</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=1040">Youth</a></li>
+                            </ul>
+                        </li>
+                        <li class="menuItem">
+                            <a href="https://www.fashionfatale.com/store/?step=store&amp;id=443">Headwear</a>
+                            <ul class="subMenuItem">
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=520">Caps</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=709">Visors</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=710">Beanies/Knits</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=708">Specialty Hats</a></li>
+                            </ul>
+                        </li>
+                        <li class="menuItem">
+                            <a href="https://www.fashionfatale.com/store/?step=store&amp;id=442">Accessories</a>
+                            <ul class="subMenuItem">
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=514">Briefcases</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=515">Tote Bags</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=516">Backpacks</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=517">Duffel Bags</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=519">Aprons/Towels</a></li>
+                                <li class="menuItem2"><a href="https://www.fashionfatale.com/store/?step=store&amp;id=518">Travel/Entertainment</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+    </body>
+</html>
+

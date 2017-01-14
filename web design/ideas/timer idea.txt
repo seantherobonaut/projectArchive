@@ -1,0 +1,21 @@
+will it affect other timers? do several timers at once
+
+make timer that can be run like this startTimer(nameOfTimer, customFunction, delay, repetitions)
+
+3 timers
+
+run stuff each rep (no exec after)
+
+only execute something after
+
+run each rep and execute soemthing eafter
+
+
+store all functions in an array
+and execute each item with a delay
+
+push all funcsions to an array
+
+myarray.push
+
+myarray[0]();

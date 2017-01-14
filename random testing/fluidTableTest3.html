@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			*
+			{
+				margin:0;
+				padding:0;
+				font-size:0;
+			}
+
+			body
+			{
+				padding:10px;
+			}
+
+			.wrap
+			{
+				width: 100%;
+				max-width: 800px;
+				margin:auto;
+			}
+
+			.outer
+			{
+				display: inline-block;
+			}
+
+			.outer div
+			{
+				border:2px solid black;
+				font-size: 12px;
+				margin:5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap" style="border:1px solid blue;text-align:center;">
+			<div class="outer" style="width:33.33%;text-align:center;min-width:150px"><div>Hello world!</div></div>
+			<div class="outer" style="width:66.66%"><div>Hello world!</div></div>
+		</div>
+	</body>
+</html>

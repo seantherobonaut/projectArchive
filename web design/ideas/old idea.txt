@@ -1,0 +1,15 @@
+idea!
+
+/*IDEA!!! You can run a function with the rendering of every element! Just it showing up on the page can run a function! Plus...the "this" selector...*/
+
+click "edit"
+get innerHtml to change to dispaying "Sean Leapley" to <input box>
+
+//filled in text
+<form action="action_page.php">
+  <textarea name="message">The cat was playing in the garden.</textarea>
+  <br>
+  <input type="submit">
+</form>
+
+only able to edit the test website if your ipmatches

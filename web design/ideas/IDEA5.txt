@@ -1,0 +1,9 @@
+make sure when window size is changed it changes all major elements
+
+rename header and navbar and navlinks
+
+hover script for navlinks
+
+make so the page only refreshes on desktops (detect this if the navlinks need to collapes) &&
+	only if the window has moved 10 pixels in either direction
+		(store current and previous values in an array to compare)

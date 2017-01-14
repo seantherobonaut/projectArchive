@@ -1,0 +1,5 @@
+<IfModule mod_headers.c>
+ <FilesMatch "\.(json|pdf|swf|bmp|gif|jpeg|jpg|png|svg|tiff|ico|flv|js)$">
+  Header unset Last-Modified
+ </FilesMatch>
+</IfModule>

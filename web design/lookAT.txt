@@ -1,0 +1,21 @@
+
+    <link rel="canonical" href="https://sketchfab.com/models/92d70f4d9e56436abcc3ba460982e64a">
+ <meta name="theme-color" content="#1CAAD9">
+
+
+<meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <link rel="dns-prefetch" href="https://d2f25wgezub9nf.cloudfront.net">
+
+    <link rel="dns-prefetch" href="https://d35krx4ujqgbcr.cloudfront.net">
+
+
+<form class="search" action="/models" method="get" data-action="search">
+            <div class="inner">
+                <input class="search-field" type="search" name="query" placeholder="Search">
+                <a href="#" class="clear hidden"></a>
+                <button type="button" class="closesearch" data-action="close-search">
+                    Cancel
+                </button>
+            </div>
+        </form>
