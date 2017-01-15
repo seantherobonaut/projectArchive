@@ -25,6 +25,11 @@ function initJs()
     setTimeout(function()
     {
         WebFont.load({google: {families:fontArray}});
+    }, 2000);
+
+    setTimeout(function()
+    {
+        runJs();
     }, 1000);
 }
 
