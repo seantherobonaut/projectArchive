@@ -37,16 +37,16 @@
 				right:0px; 
 			}
 
-			#fontBase, #fontA
+			#fontA, #fontB
 			{
-				font-size: 50px;
+				font-size: 100px;
 				color:white;
 			}
 		</style>
 		 
 		<div id="fontLoadCheck">
-			<span id="fontBase">FontA</span>
-			<span id="fontA" style="font-family: 'Roboto'">FontB</span>
+			<span id="fontA">Font</span><br>
+			<span id="fontB" style="font-family: 'Roboto'">Font</span>
 		</div>
 
 

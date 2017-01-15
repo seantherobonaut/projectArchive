@@ -1,36 +1,22 @@
-/*
-//Grab width before font loads...then load font after a settimeout of 1, then do more timing stuffs?
-
-
-var counter = 0;
-var baseWidth = $("#fontBase").width();
-var fontCheck = setInterval(function()
-{
-    var loadFont = $("#fontA").width();
-    if(baseWidth == loadFont)
-        counter++;
-    else
-    {
-        $("#rezzy").html(baseWidth + "<br>" + loadFont + "<br>" + (counter));
-        runJs();
-        clearInterval(fontCheck);
-    }
-
-}, 1);*/
-
-
 
 function initJs()
 {
-    setTimeout(function()
-    {
-        WebFont.load({google: {families:fontArray}});
-    }, 2000);
+    var counter = 0;
+    var fontA = $("#fontA").width();
 
-    setTimeout(function()
+    WebFont.load({google: {families:fontArray}});
+    var fontCheck = setInterval(function()
     {
-        runJs();
-    }, 1000);
+        var fontB = $("#fontB").width();
+        if(fontA == fontB)
+            counter++;
+        else
+        {
+            $("#rezzy").html(fontA + "<br>" + fontB + "<br>" + (counter));
+            runJs();
+            clearInterval(fontCheck);
+        }
+    }, 1);   
 }
 
 
