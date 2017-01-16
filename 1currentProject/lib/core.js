@@ -2,17 +2,17 @@
 function initJs()
 {
     var counter = 0;
-    var fontA = $("#fontA").width();
+    var startWidth = $("#fontA").width();
 
-    WebFont.load({google: {families:fontArray}});
+    WebFont.load({google: {families:startWidthrray}});
     var fontCheck = setInterval(function()
     {
         var fontB = $("#fontB").width();
-        if(fontA == fontB)
+        if(startWidth == fontB)
             counter++;
         else
         {
-            $("#rezzy").html(fontA + "<br>" + fontB + "<br>" + (counter));
+            $("#rezzy").html(startWidth + "<br>" + fontB + "<br>" + (counter));
             runJs();
             clearInterval(fontCheck);
         }
@@ -33,7 +33,7 @@ function runJs()
 
 function setParentWidth(currentObj)
 {
-	currentObj.parent().width(currentObj.outerWidth()+1);
+	currentObj.parent().width(currentObj.outerWidth());
 }
 
 function vertAlign(currentObj)

@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" type="text/css" href="home.css">
 <div class="partition">
 	<div class="module" id="main">
@@ -35,9 +36,10 @@
 				position: absolute;
 				bottom:0px;
 				right:0px; 
+				/*z-index: -100;*/
 			}
 
-			#fontA, #fontB
+			#fontA
 			{
 				font-size: 100px;
 				color:white;
@@ -45,8 +47,7 @@
 		</style>
 		 
 		<div id="fontLoadCheck">
-			<span id="fontA">Font</span><br>
-			<span id="fontB" style="font-family: 'Roboto'">Font</span>
+			<span id="fontA">Font</span>
 		</div>
 
 

@@ -4,6 +4,7 @@
 	$dynBgType = "full";
 	$dynBgArray = getimagesize($dynBgPath);
 ?>
+
 <link rel="stylesheet" type="text/css" href="lib/dynamicBackground/dynBg.css">
 <script type="text/javascript">
 	var dynBgDataServer = ["<?php echo $dynBgPath;?>", "<?php echo $dynBgType;?>", "<?php echo $dynBgArray[0];?>", "<?php echo $dynBgArray[1];?>"];
