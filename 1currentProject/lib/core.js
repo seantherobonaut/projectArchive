@@ -1,34 +1,20 @@
-
-function initJs()
-{
-    var counter = 0;
-    var startWidth = $("#fontA").width();
-
-    WebFont.load({google: {families:startWidthrray}});
-    var fontCheck = setInterval(function()
-    {
-        var fontB = $("#fontB").width();
-        if(startWidth == fontB)
-            counter++;
-        else
-        {
-            $("#rezzy").html(startWidth + "<br>" + fontB + "<br>" + (counter));
-            runJs();
-            clearInterval(fontCheck);
-        }
-    }, 1);   
-}
-
-
 function runJs()
 {
-    //This just makes the wrapper height of window
-    $("#wrapper").each(function(){$(this).css("min-height", $(window).height());});
-
+    $("#wrapper").each(function(){wrapperSetHeight($(this));}); //This just makes the wrapper height of window
 	$(".setParentWidth").each(function(){setParentWidth($(this));});
 	$(".vertAlign").each(function(){vertAlign($(this));});
-
 	$("#navMenu").each(function(){navMenu($(this));});		
+}
+
+function wrapperSetHeight(currentObj)
+{
+    wrapperSetHeightLoop(currentObj);
+    $(window).resize(function(){wrapperSetHeightLoop(currentObj);});
+
+    function wrapperSetHeightLoop(inheritObj)
+    {
+        inheritObj.css("min-height", $(window).height() - 1); //So the navbar doesn't jump as much
+    }
 }
 
 function setParentWidth(currentObj)
@@ -52,7 +38,7 @@ function navMenu(currentObj)
 	var breakPoint = logo + nav + extra + widthBuffer;
 	
 	navSwitch(currentObj, breakPoint);
-	$(window).on("resize", function()
+	$(window).resize(function()
 	{
 		navSwitch(currentObj, breakPoint);
 	});

@@ -1,5 +1,5 @@
-
 <link rel="stylesheet" type="text/css" href="home.css">
+
 <div class="partition">
 	<div class="module" id="main">
 		<div id="outerNav">
@@ -27,30 +27,6 @@
 				<div></div>
 			</div>
 		</div>
-
-
-		<script type="text/javascript">var fontArray = ["Roboto:300,300i,900", "Open+Sans"];</script>
-		<style type="text/css">
-			#fontLoadCheck
-			{
-				position: absolute;
-				bottom:0px;
-				right:0px; 
-				/*z-index: -100;*/
-			}
-
-			#fontA
-			{
-				font-size: 100px;
-				color:white;
-			}
-		</style>
-		 
-		<div id="fontLoadCheck">
-			<span id="fontA">Font</span>
-		</div>
-
-
 
  		<p id="rezzy">Result...</p>
 	</div>

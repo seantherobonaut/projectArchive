@@ -54,22 +54,23 @@ function dynBgLoop(inheritObj, dataArray, ratioA, ratioB)
 	{
 		case "full":
 			//Set image dimensions relative to dynbg
-			inheritObj.children("img").height(inheritObj.height());
-			inheritObj.children("img").width((ratioA * inheritObj.height()));
+			var imgObj = inheritObj.children("img");
+			imgObj.height(inheritObj.height());
+			imgObj.width((ratioA * inheritObj.height()));
 
 			var objectWidth = inheritObj.width();
-			var dynBgImgWidth = inheritObj.children("img").width();
-			var adaptiveMargin = (inheritObj.width() - inheritObj.children("img").width())/2;	
+			var dynBgImgWidth = imgObj.width();
+			var adaptiveMargin = (inheritObj.width() - imgObj.width())/2;	
 
 			//If image is smaller than screen width, 
 			if(objectWidth > dynBgImgWidth)
 			{
-				inheritObj.children("img").css("margin-left", 0);
-				inheritObj.children("img").height((ratioB * inheritObj.width()));
-				inheritObj.children("img").width(objectWidth);
+				imgObj.css("margin-left", 0);
+				imgObj.height((ratioB * inheritObj.width()));
+				imgObj.width(objectWidth);
 			}
 			else
-				inheritObj.children("img").css("margin-left", adaptiveMargin);
+				imgObj.css("margin-left", adaptiveMargin);
 			break;
 		default:
 			break;

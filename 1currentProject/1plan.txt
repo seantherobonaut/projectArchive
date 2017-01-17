@@ -1,0 +1,27 @@
+fix fontloader code a bit to make it just one element check...do others later
+
+move php background check code check to the file (it will get current page then check it it has a background)...fake db
+
+make font loader like the dynbg checking mysqldb first...fake db
+
+make big change with the breaker divs... class (breakEvent func:stack)
+
+the logo to shrink when it is too small...and make sure the right does not need to be posisiton absolute
+
+
+bring him over and discuss mobile menu...panel come in from the side...or links just drop down like on brandons?(mentioned they need background covering)
+
+GET FINISHED WITH FRONT END!!!
+	Make the admin page...simple form login...style it
+
+	make copyright...and discuss if look is ok
+	discuss with him the copyright look and clarify what i
+
+
+Back end:
+	Get login working
+	make mysql template pages...
+		if get = something...that entry is of page type
+			if of this page type
+				php is the tempalte and mysql stores the pages as is...no templates in mysql
+				...!!!FIGURE THIS OUT LATER!!!
