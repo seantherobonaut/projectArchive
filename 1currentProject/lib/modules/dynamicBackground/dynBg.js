@@ -5,7 +5,30 @@
 	an id of "dynBg". Finally, this javascript file included scans for
 	any tags with an id of "dynBg" and runs the respective code.
 */
-$("#dynBg").each(function(){dynBg($(this));});
+
+function dynBgInit(currentObj)
+{
+	//Path, width, height, whRatio, hwRatio
+	var dataArray = currentObj.text();
+	dataArray = dataArray.split(",");
+	//Maybe these pushes won't work with more string items such as tiled
+	dataArray.push((dataArray[1]/dataArray[2])); //whRatio
+	dataArray.push((dataArray[2]/dataArray[1])); //hwRatio
+	return dataArray;
+}
+
+$("#dynBg > .imgFull").each(function()
+{
+	var dynBgData = dynBgInit($(this));
+
+	$("#myresult").append(dynBgData);
+});
+
+
+
+
+
+/*
 
 //copy data, calc ratios, make offset, insert image, start dynBg processes and run window resize loop
 function dynBg(currentObj)
@@ -76,3 +99,4 @@ function dynBgLoop(inheritObj, dataArray, ratioA, ratioB)
 			break;
 	}
 }
+*/

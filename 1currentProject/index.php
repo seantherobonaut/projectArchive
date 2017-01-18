@@ -12,8 +12,9 @@
 	<body>
 		<div id="wrapper">
 			<?php
-				//include 'lib/modules/dynamicBackground/init.php';
-				include 'home.php';
+				//include 'test.php';
+				include 'lib/modules/dynamicBackground/init.php';
+				//include 'home.php';
 			?>
 		</div>
 		<script type="text/javascript" src="lib/core.js"></script>
