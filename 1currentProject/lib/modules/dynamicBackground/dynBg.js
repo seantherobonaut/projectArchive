@@ -1,102 +1,60 @@
 /*
-	If the get request calls a page that has a background image, php gets
-	the image type, path, and dimensions and then puts it into a javascript
-	array called dynBgDataServer. Next, php inserts and empty div tag with
-	an id of "dynBg". Finally, this javascript file included scans for
-	any tags with an id of "dynBg" and runs the respective code.
+	Description of how this works...
+	TODO...make callback function for window resize, rename some variables in the loop to make more sense
+	...wait since you can have multipel classes on something and each() can filter only one....just make dynbg have multiple classes
 */
 
-function dynBgInit(currentObj)
+//!Maybe these pushes won't work with more string items such as tiled
+function dynBgGetData(currentObj)
 {
-	//Path, width, height, whRatio, hwRatio
-	var dataArray = currentObj.text();
+	var dataArray = currentObj.text(); //Path, Width, Height, whRatio, hwRatio, Type
 	dataArray = dataArray.split(",");
-	//Maybe these pushes won't work with more string items such as tiled
 	dataArray.push((dataArray[1]/dataArray[2])); //whRatio
 	dataArray.push((dataArray[2]/dataArray[1])); //hwRatio
+	dataArray.push(currentObj.attr("class"));
 	return dataArray;
+}
+
+//(+70) The height of navbars and other gui can compromise fixed positioning
+function dynBgOffset(currentObj)
+{
+	currentObj.height($(window).height() + 70); 
+}
+
+function imgFullLoop(currentObj, dataArray)
+{
+	var ratioA = dataArray[3], ratioB = dataArray[4];
+
+	//Set image dimensions relative to dynbg
+	var imgObj = currentObj.children("img");
+	imgObj.height(currentObj.height());
+	imgObj.width((ratioA * currentObj.height()));
+
+	var objectWidth = currentObj.width();
+	var dynBgImgWidth = imgObj.width();
+	var adaptiveMargin = (currentObj.width() - imgObj.width())/2;	
+
+	//If image is smaller than screen width, do stuff
+	if(objectWidth > dynBgImgWidth) 
+	{
+		imgObj.css("margin-left", 0);
+		imgObj.height((ratioB * currentObj.width()));
+		imgObj.width(objectWidth);
+	}
+	else
+		imgObj.css("margin-left", adaptiveMargin);
 }
 
 $("#dynBg > .imgFull").each(function()
 {
-	var dynBgData = dynBgInit($(this));
+	var dynBgObj = $(this).parent(), dynBgData = dynBgGetData($(this));//Maybe make this a global each?
+	dynBgObj.append('<img src="'+dynBgData[0]+'" />');
 
-	$("#myresult").append(dynBgData);
-});
-
-
-
-
-
-/*
-
-//copy data, calc ratios, make offset, insert image, start dynBg processes and run window resize loop
-function dynBg(currentObj)
-{
-	var dynBgData = dynBgDataServer.slice(0);
-
-	//Calculate ratios
-	var whRatio = dynBgData[2] / dynBgData[3];
-	var hwRatio = dynBgData[3] / dynBgData[2];
-
-	dynBgOffset(currentObj);
-	dynBgInit(currentObj, dynBgData);
-	dynBgLoop(currentObj, dynBgData, whRatio, hwRatio);
-
+	dynBgOffset(dynBgObj);
+	imgFullLoop(dynBgObj, dynBgData);
 	$(window).resize(function()
 	{
-		dynBgOffset(currentObj);
-		dynBgLoop(currentObj, dynBgData, whRatio, hwRatio);
+		dynBgOffset(dynBgObj);
+		imgFullLoop(dynBgObj, dynBgData);
 	});
-}
-
-//(+70) The height of navbars and other gui can compromise fixed positioning
-function dynBgOffset(inheritObj)
-{
-	inheritObj.height($(window).height() + 70); 
-}
-
-//If type = case run code
-function dynBgInit(inheritObj, dataArray)
-{
-	switch(dataArray[1])
-	{
-		case "full":
-			//Insert image
-			inheritObj.html('<img src="' + dataArray[0] + '" />');
-			break;
-		default:
-			break;
-	}
-}
-
-//Loop that runs on window resize and document ready (The full Monty)
-function dynBgLoop(inheritObj, dataArray, ratioA, ratioB)
-{
-	switch(dataArray[1])
-	{
-		case "full":
-			//Set image dimensions relative to dynbg
-			var imgObj = inheritObj.children("img");
-			imgObj.height(inheritObj.height());
-			imgObj.width((ratioA * inheritObj.height()));
-
-			var objectWidth = inheritObj.width();
-			var dynBgImgWidth = imgObj.width();
-			var adaptiveMargin = (inheritObj.width() - imgObj.width())/2;	
-
-			//If image is smaller than screen width, 
-			if(objectWidth > dynBgImgWidth)
-			{
-				imgObj.css("margin-left", 0);
-				imgObj.height((ratioB * inheritObj.width()));
-				imgObj.width(objectWidth);
-			}
-			else
-				imgObj.css("margin-left", adaptiveMargin);
-			break;
-		default:
-			break;
-	}
-}
-*/
+});

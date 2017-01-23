@@ -24,6 +24,6 @@
 		background-position:top right;
 	*/
 ?>
-<p id="myresult"></p>
+
 <link rel="stylesheet" type="text/css" href="lib/modules/dynamicBackground/dynBg.css">
 <script src="lib/modules/dynamicBackground/dynBg.js"></script>
