@@ -1,3 +1,5 @@
+Test!!
+
 fix fontloader code a bit to make it just one element check...do others later
 
 move php background check code check to the file (it will get current page then check it it has a background)...fake db
