@@ -45,6 +45,7 @@ function imgFullLoop(currentObj, dataArray)
 		imgObj.css("margin-left", adaptiveMargin);
 }
 
+//maybe put this inside the function and insert the name of the desired element into the .each func below as a string
 $("#dynBg > .imgFull").each(function()
 {
 	var dynBgObj = $(this).parent(), dynBgData = dynBgGetData($(this));//Maybe make this a global each?

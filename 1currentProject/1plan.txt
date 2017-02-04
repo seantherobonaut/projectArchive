@@ -1,16 +1,19 @@
 Test!!
 
-fix fontloader code a bit to make it just one element check...do others later
+fix up dynbackground code
+
+make all php and js/css packages seperate 
+
+fix fontloader code 
 
 move php background check code check to the file (it will get current page then check it it has a background)...fake db
-
 make font loader like the dynbg checking mysqldb first...fake db
 
 make big change with the breaker divs... class (breakEvent func:stack)
 
 the logo to shrink when it is too small...and make sure the right does not need to be posisiton absolute
 
-
+(already done, bring him over again to see how he likes it)
 bring him over and discuss mobile menu...panel come in from the side...or links just drop down like on brandons?(mentioned they need background covering)
 
 GET FINISHED WITH FRONT END!!!
