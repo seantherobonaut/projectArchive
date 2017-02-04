@@ -46,16 +46,25 @@ function imgFullLoop(currentObj, dataArray)
 }
 
 //maybe put this inside the function and insert the name of the desired element into the .each func below as a string
+//now make the window resize callback function
+$("#dynBg").each(function()
+{
+	var dynBgObj = $(this);
+	dynBgOffset(dynBgObj);
+	$(window).resize(function()
+	{
+		dynBgOffset(dynBgObj);
+	});
+});
+
 $("#dynBg > .imgFull").each(function()
 {
 	var dynBgObj = $(this).parent(), dynBgData = dynBgGetData($(this));//Maybe make this a global each?
 	dynBgObj.append('<img src="'+dynBgData[0]+'" />');
 
-	dynBgOffset(dynBgObj);
 	imgFullLoop(dynBgObj, dynBgData);
 	$(window).resize(function()
 	{
-		dynBgOffset(dynBgObj);
 		imgFullLoop(dynBgObj, dynBgData);
 	});
 });
