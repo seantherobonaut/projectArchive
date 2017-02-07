@@ -14,6 +14,7 @@
 			<?php
 				//include 'test.php';
 				include 'lib/modules/dynamicBackground/init.php';
+				//Hello world! From linux Kubuntu 16.04.1!!!
 				//include 'home.php';
 			?>
 		</div>
