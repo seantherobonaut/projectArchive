@@ -2,6 +2,13 @@
 	Description of how this works...
 	TODO...make callback function for window resize, rename some variables in the loop to make more sense
 	...wait since you can have multipel classes on something and each() can filter only one....just make dynbg have multiple classes
+
+
+		//Optional parameter execution. Will only fire if there is a parameter
+	if ( !(postFunc === undefined) )
+	{
+		postFunc();
+	}
 */
 
 //!Maybe these pushes won't work with more string items such as tiled

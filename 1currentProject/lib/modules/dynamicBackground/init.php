@@ -1,7 +1,7 @@
 <?php
 	//If mysql cell "backgroundImage is NOT empty" do something (get current page and stuff like that)
 	//Path, type {full,topLeft,half,etc or tiled:data(background-size, repeat x or y...)}
-	$fakeMYSQLbgString = "images/layout/abackground.jpg,imgFull";
+	$fakeMYSQLbgString = "images/layout/zbackground.jpg,imgFull";
 	
 	$dynBgData = explode(",", $fakeMYSQLbgString);
 	$dynBgDims = getimagesize($dynBgData[0]);
