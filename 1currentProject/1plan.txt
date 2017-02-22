@@ -1,8 +1,6 @@
 Test!!
 
-fix up dynbackground code
-
-make all php and js/css packages seperate 
+alreadye done - make it a practice... all php and js/css packages seperate ...make into module/clientOrServer
 
 fix fontloader code 
 
