@@ -2,7 +2,7 @@ Test!!
 
 alreadye done - make it a practice... all php and js/css packages seperate ...make into module/clientOrServer
 
-fix fontloader code 
+fix fontloader code (idea for later..instead of having a core.js with the resize stuff...make that resize stuff a module)
 
 move php background check code check to the file (it will get current page then check it it has a background)...fake db
 make font loader like the dynbg checking mysqldb first...fake db

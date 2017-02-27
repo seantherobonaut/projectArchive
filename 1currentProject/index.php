@@ -8,17 +8,19 @@
 		<link rel="stylesheet" type="text/css" href="lib/core.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+
+		<script type="text/javascript" src="lib/init.js"></script>
+		<script type="text/javascript" src="lib/core.js"></script>
 	</head>
 	<body>
 		<div id="wrapper">
 			<?php
 				//include 'test.php';
-				include 'lib/modules/dynamicBackground/server/init.php';
-				//Hello world! From linux Kubuntu 16.04.1!!!
+				include 'lib/dynamicBackground/server/init.php';
+				//include 'lib/fontLoader/server/init.php';
 				//include 'home.php';
 			?>
 		</div>
-		<script type="text/javascript" src="lib/core.js"></script>
 		<script type="text/javascript">runJs();</script>
 	</body>
 </html>

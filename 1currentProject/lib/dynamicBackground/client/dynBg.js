@@ -1,19 +1,6 @@
 /*
 	Description of how this works...
-	
 */
-
-function execResize(callback)
-{
-	if ( !(callback === undefined) )
-	{
-		callback();
-		$(window).resize(function()
-		{
-			callback();	
-		});
-	}
-}
 
 //!!!Maybe these pushes won't work with more string items such as tiled
 function dynBgGetData(currentObj)

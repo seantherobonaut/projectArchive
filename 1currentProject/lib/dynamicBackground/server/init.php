@@ -25,5 +25,5 @@
 	*/
 ?>
 
-<link rel="stylesheet" type="text/css" href="lib/modules/dynamicBackground/client/dynBg.css">
-<script src="lib/modules/dynamicBackground/client/dynBg.js"></script>
+<link rel="stylesheet" type="text/css" href="lib/dynamicBackground/client/dynBg.css">
+<script src="lib/dynamicBackground/client/dynBg.js"></script>
