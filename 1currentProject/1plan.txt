@@ -1,5 +1,11 @@
 Test!!
-
+		(make a package loading system eventually
+			All packages are loaded automatcially maybe my php script. It seaches the directory for folders and in the subfolder a init.php
+				Also..maybe have a "preDom", "DOM", and "POSTdom" folders to control what gets loaded first
+				...also for the javascript...make it so the javascript that rearrachanges the pages only loads if the font loader controls the execution..no font laoder package..it loads
+				...make package requirement system...some packages produce custom error if you say it requires another package...list the error output:
+					"dyamicLayout requires fontLoader to run...(if packages are missing from a package...list that too"
+		)
 alreadye done - make it a practice... all php and js/css packages seperate ...make into module/clientOrServer
 
 fix fontloader code (idea for later..instead of having a core.js with the resize stuff...make that resize stuff a module)

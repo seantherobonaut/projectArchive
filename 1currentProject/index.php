@@ -16,8 +16,8 @@
 		<div id="wrapper">
 			<?php
 				//include 'test.php';
-				include 'lib/dynamicBackground/server/init.php';
-				//include 'lib/fontLoader/server/init.php';
+				//include 'lib/dynamicBackground/server/init.php';
+				include 'lib/fontLoader/server/init.php';
 				//include 'home.php';
 			?>
 		</div>
