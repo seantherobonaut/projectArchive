@@ -7,9 +7,10 @@
     $fontLdrData = explode(" ", $fakeMYSQLfontString);
     echo "<div id='fontLdr'>";
         for($counter = 0;$counter < sizeof($fontLdrData);$counter++)
-            echo "<span class='font".$counter."'>". $fontLdrData[$counter] ."</span><br>";
+            echo "<span id='font".$counter."'>". $fontLdrData[$counter] ."</span><br>";
     echo "</div>";
 
 ?>
 <link rel="stylesheet" type="text/css" href="lib/fontLoader/client/fontLdr.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
 <script type="text/javascript" src="lib/fontLoader/client/fontLdr.js"></script>

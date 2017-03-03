@@ -7,7 +7,6 @@
 		
 		<link rel="stylesheet" type="text/css" href="lib/core.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
 
 		<script type="text/javascript" src="lib/init.js"></script>
 		<script type="text/javascript" src="lib/core.js"></script>
@@ -20,6 +19,7 @@
 				include 'lib/fontLoader/server/init.php';
 				//include 'home.php';
 			?>
+			<p id="myres"></p>
 		</div>
 		<script type="text/javascript">runJs();</script>
 	</body>

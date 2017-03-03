@@ -1,3 +1,8 @@
+* /*Enable default font it is consistent across systems if unchanged.*/
+{
+	font-family: "Courier New", Courier, monospace;
+}
+
 html, body
 {
 	font-size:0px;
