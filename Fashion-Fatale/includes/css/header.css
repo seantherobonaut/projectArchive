@@ -1,0 +1,123 @@
+.dynHeader
+{
+    /*Needed spacer, no styles*/
+}
+
+.dynHeaderTable
+{
+    display: table;
+    width:100%;
+}
+
+.leftCell, .rightCell
+{
+    display: inline-block;
+    vertical-align: top;
+    display: table-cell;
+}
+
+.rightCell
+{
+    text-align: right;
+    width:255px;
+}
+
+#mainlogo, #userDetails
+{
+    display: inline-block;
+    
+}
+
+#mainlogo, #mainlogo img
+{
+    display: block; 
+}
+
+#mainlogo
+{
+    max-width:277px;        
+}
+
+#mainlogo img
+{
+    width:100%;
+}
+
+#announcement
+{
+    /*Centered at 50% then subtract 1/2 its width, then + 1/2 logowidth and - 1/2 loginwidth*/
+    position: relative;
+    left:50%;
+    width:280px;
+    margin-left: -130px;
+    height:55px;
+    margin-top:-87px;   
+    margin-bottom:32px; 
+    
+    color:red;
+    text-align:center;
+}
+
+#userDetails
+{
+    text-align:right;
+    height:120px;
+    max-width: 260px;
+}
+
+#userDetailsSpacer
+{
+    height:52px;
+}
+
+input
+{
+    margin-bottom:5px;
+    width:160px;
+    font-size:14px;
+}
+
+@media screen and (max-width: 880px)
+{
+    #announcement
+    {
+        position: static;
+        margin:10px auto;
+    }
+}
+
+@media screen and (max-width: 580px)
+{
+    .leftCell, .rightCell
+    {
+        display: block;
+        margin:auto;
+    }
+
+    #mainlogo
+    {
+        margin:auto;
+    }
+
+    #announcement
+    {
+        margin-top: 0px;
+    }
+
+    #userDetails, #announcement
+    {
+        margin:10px auto 5px auto;
+    }
+
+    #userDetails
+    {   
+        text-align:center;
+        height:auto;
+        display: block;
+    }
+
+    #userDetailsSpacer
+    {
+        height:1px;
+    }   
+}

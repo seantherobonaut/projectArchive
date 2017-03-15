@@ -1,0 +1,27 @@
+--done--Javascript/IE reject script
+--done--Connect to database
+
+refer to TODO text
+
+Connect userlogin only for admin
+	...PHP file_put_contents ....md5() crytp()  file_exists()
+
+Get structure up and running
+Test adding boxes and styling
+Start major formatting css/js functions (uuwat lib)
+add context menu edit?
+
+Start adding modules, uploading photos/videos and their players
+other user login systems
+chat systems
+
+
+____________________________
+
+write a simple page...add lines,remove lines, edit lines, be able to rearrange their order
+
+add in security login/sessions
+
+start with columns and layouts
+
+learn wordpress?

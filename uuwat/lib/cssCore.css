@@ -1,0 +1,22 @@
+html, body
+{
+	margin:0px !important;
+	padding:0px !important;
+	/*font-size: 0px;*/
+}
+
+body{overflow-y: scroll !important;}
+
+div.uuwatBox
+{
+	margin:0px;
+	padding:0px;
+	font-size: 0px;
+	box-sizing: border-box;
+
+	border:1px solid gray;
+}
+
+div.uuwatTextNormal{font-size: 16px;}
+
+

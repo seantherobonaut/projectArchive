@@ -1,0 +1,11 @@
+require /compatibility/check.php
+
+page=""
+if page != 404
+{
+echo
+
+ifie..redirect /compatibility/handler.php
+noscript ...redirect /compatibility/handler.php
+
+404 will be .htaccess    index.php?page=404

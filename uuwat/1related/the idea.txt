@@ -1,0 +1,16 @@
+div.text =? p.text
+defautl styles with important! overrides anything?
+can people change html/css/js in browser dev tools?
+
+______________________________________________
+(s) use mysql "like" function to grab items froma string
+
+//no need for teirs, just compare order of ids under parents
+uuwat_id style_classes parent page(s) content_table content_row content_column    ---- seperate table-----   table row column ip user timestamp
+
+box(default)
+
+other special content
+
+usertable
+id firstname middlename lastname age location email active
