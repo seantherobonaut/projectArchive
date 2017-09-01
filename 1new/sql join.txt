@@ -1,0 +1,5 @@
+find out warning message "Current selection does not contain a unique column. Grid edit, checkbox, Edit, Copy and Delete features are not available."
+
+SELECT imageraw.imgPath
+FROM imageraw
+INNER JOIN imgloc on imageraw.img_ID = imgloc.imgID;
