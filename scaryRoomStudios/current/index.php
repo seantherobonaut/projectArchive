@@ -1,8 +1,9 @@
 <?php
-	if(isset($_GET["page"]))
-		$activePage = $_GET["page"];
-	else
-		$activePage = "Home";
+    if(empty($_GET["page"]) && basename($_SERVER["SCRIPT_FILENAME"]) == "index.php")
+    {
+        header("Location: /Home");
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,14 +14,14 @@
 		<meta name="keywords" content="scaryroomstudios,brandondominquez,rap,d-rock,usvsu">
 		<meta name="author" content="Sean Leapley">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="js/jquery3.2.1.min.js"></script>
 		<script src="js/adaptive.js"></script>
 		<script type="text/javascript">
 			//TODO add functionality to only allow certain pages to go through and not ?;alkjdf;lasjkdf
-			currentPage = "<?php echo $activePage;?>";
+			currentPage = "<?php echo $_GET["page"];?>";
 		</script>
 
-		<title><?php echo $activePage;?></title>
+		<title><?php echo $_GET['page'];?></title>
 
 		<link rel="stylesheet" type="text/css" href="css/layout.css" />
 		<link rel="stylesheet" type="text/css" href="css/navbar.css" />
@@ -38,23 +39,23 @@
 				-->
 				<div id="navlogo" style="white-space:nowrap">
 					<!-- This button is default invisible and only becomes visible when navlinks divs are displayed as block elements -->
-					<img src="images/layout/logo.png" style="display:inline-block;height:60px;vertical-align:middle;cursor:pointer" onclick="window.open('?page=Home','_self');" />
+					<img src="images/layout/logo.png" style="display:inline-block;height:60px;vertical-align:middle;cursor:pointer" onclick="window.open('/Home','_self');" />
 					<div id="mobileMenu" style="color:white;display:none;vertical-align:middle;cursor:pointer;font-size:18px;font-family:sans-serif;padding:0px 5px;margin-left:10px" onclick="$('#navlinks').slideToggle(300);">
 						Menu
 						<img src="images/layout/mobile_menu_icon.png" style="vertical-align:middle;border:1px solid white;border-radius:6px;display:inline-block;width:20px;padding:5px" />
 					</div>
 				</div>
 				<div id="navlinks">
-					<div onclick="window.open('?page=Home','_self');">Home</div>
-					<div onclick="window.open('?page=SoundDesigns','_self');">Sound Designs</div>
-					<div onclick="window.open('?page=Contact','_self');">Contact</div>
+					<div onclick="window.open('/Home','_self');">Home</div>
+					<div onclick="window.open('/SoundDesigns','_self');">Sound Designs</div>
+					<div onclick="window.open('/Contact','_self');">Contact</div>
 				</div>
 			</div>
 		</div>
 		<div class="partition" style="margin-bottom:0px">
 			<div id="main">
 				<div id="content">
-					<!-- Content is loaded here -->				
+					<?php require $_GET['page'].'.php';?>			
 				</div>
 			</div>
 		</div>
@@ -63,9 +64,7 @@
 				<div id="copyright">
 					<!-- Some crazy white-space stuff to make sure the lines only break before "All rights reserved." -->
 					<div style="white-space:nowrap;display:inline-block">
-						Copyright &copy; 2014 -
-						<script type="text/javascript">var year = new Date();document.write(year.getFullYear());</script>
-						Scary Room Studios. 
+						Copyright &copy; 2014 - <?php echo date('Y');?>Scary Room Studios. 
 					</div>
 					<div style="white-space:nowrap;display:inline-block">
 						All rights reserved.
@@ -87,109 +86,107 @@
 
 			function adaptInit()
 			{
-
 				//Navbar adapt
-					clearSpacing("#navlogo");
-					$("#mobileMenu").css("font-size", "18px");
-					$("#navlogo").width(getInnerWidth("#navlogo"));
+				clearSpacing("#navlogo");
+				$("#mobileMenu").css("font-size", "18px");
+				$("#navlogo").width(getInnerWidth("#navlogo"));
 
-					clearSpacing("#navlinks");
-					navlinksWidthCopy = getInnerWidth("#navlinks"); 
-					$("#navlinks").width(navlinksWidthCopy);
-					leftrightAdapt("#navlogo", "#navlinks", 30, function()
+				clearSpacing("#navlinks");
+				navlinksWidthCopy = getInnerWidth("#navlinks"); 
+				$("#navlinks").width(navlinksWidthCopy);
+				leftrightAdapt("#navlogo", "#navlinks", 30, function()
+				{
+					//The +10 is in case a scroll bar appears
+					if( (($("#navlinks").css("float") == "none") && (navlinksWidthCopy+10 > $("#navbar").width())) )
+					{			
+						$("#mobileMenu").css("display", "inline-block");
+						$("#navlogo").width(getInnerWidth("#navlogo") + $("#mobileMenu").outerWidth() + 10);
+						$("#navlinks").css("display", "none");
+
+						$("#navlinks div").css("display", "block");
+						$("#navlinks div").css("text-align", "center");
+						$("#navlinks").width( "65%" );
+					}
+					else
 					{
-						//The +10 is in case a scroll bar appears
-						if( (($("#navlinks").css("float") == "none") && (navlinksWidthCopy+10 > $("#navbar").width())) )
-						{			
-							$("#mobileMenu").css("display", "inline-block");
-							$("#navlogo").width(getInnerWidth("#navlogo") + $("#mobileMenu").outerWidth() + 10);
-							$("#navlinks").css("display", "none");
+						$("#mobileMenu").css("display", "none");
+						$("#navlogo").width(getInnerWidth("#navlogo"));
+						$("#navlinks").css("display", "block");
 
-							$("#navlinks div").css("display", "block");
-							$("#navlinks div").css("text-align", "center");
-							$("#navlinks").width( "65%" );
+						$("#navlinks div").css("display", "inline-block");
+						$("#navlinks div").css("text-align", "left");
+						$("#navlinks").width(navlinksWidthCopy);
+					}
+				});
 
+				verticalAlign("#navlinks", function()
+				{
+					//This allows it to look more vertically centered
+					if( $("#navlinks").css("float") != "none" )
+						push = push + 10;
+					else
+						push = 20;
+				});
+
+				//Code that executes when user hovers over links.
+				navlinksHover();
+				function navlinksHover()
+				{
+				 	var inputElement = "#navlinks div";
+					$(inputElement).each(function()
+					{
+						//This will fancy up the link that has the name of the page
+						var inputElementContents = $(this).text();
+						if(inputElementContents == "Sound Designs")
+							inputElementContents = "SoundDesigns";
+						if(inputElementContents == currentPage)
+						{
+							$(this).css("text-shadow", "0px 0px 15px #CCFF00, 0px 0px 15px #CCFF00, 0px 0px 15px #CCFF00");
+							$(this).css("border-top-color", "#CCFF00");
+							$(this).css("border-top-width", "4px");
+							$(this).css("padding-top", "8px");
 						}
+						//This will fancy up all other links upon hovering
 						else
 						{
-							$("#mobileMenu").css("display", "none");
-							$("#navlogo").width(getInnerWidth("#navlogo"));
-							$("#navlinks").css("display", "block");
-
-							$("#navlinks div").css("display", "inline-block");
-							$("#navlinks div").css("text-align", "left");
-							$("#navlinks").width(navlinksWidthCopy);
+							$(this).hover(
+								function() //change it.
+								{
+									$(this).css("text-shadow", "0px 0px 15px #CCFF00,0px 0px 15px #CCFF00, 0px 0px 15px #CCFF00");
+									$(this).css("border-top-color", "#CCFF00");
+									$(this).css("border-top-width", "4px");
+									$(this).css("padding-top", "8px");
+								},
+								function() //change it back.
+								{
+									$(this).css("text-shadow", "none");
+									$(this).css("border-top-color", "white");
+									$(this).css("border-top-width", "1px");
+									$(this).css("padding-top", "11px");
+								}
+							);
 						}
 					});
-
-					verticalAlign("#navlinks", function()
-					{
-						//This allows it to look more vertically centered
-						if( $("#navlinks").css("float") != "none" )
-							push = push + 10;
-						else
-							push = 20;
-					});
-
-					//Code that executes when user hovers over links.
-					navlinksHover();
-					function navlinksHover()
-					{
-					 	var inputElement = "#navlinks div";
-						$(inputElement).each(function()
-						{
-							//This will fancy up the link that has the name of the page
-							var inputElementContents = $(this).text();
-							if(inputElementContents == "Sound Designs")
-								inputElementContents = "SoundDesigns";
-							if( inputElementContents == currentPage )
-							{
-								$(this).css("text-shadow", "0px 0px 15px #CCFF00, 0px 0px 15px #CCFF00, 0px 0px 15px #CCFF00");
-								$(this).css("border-top-color", "#CCFF00");
-								$(this).css("border-top-width", "4px");
-								$(this).css("padding-top", "8px");
-							}
-							//This will fancy up all other links upon hovering
-							else
-							{
-								$(this).hover(
-									function() //change it.
-									{
-										$(this).css("text-shadow", "0px 0px 15px #CCFF00,0px 0px 15px #CCFF00, 0px 0px 15px #CCFF00");
-										$(this).css("border-top-color", "#CCFF00");
-										$(this).css("border-top-width", "4px");
-										$(this).css("padding-top", "8px");
-									},
-									function() //change it back.
-									{
-										$(this).css("text-shadow", "none");
-										$(this).css("border-top-color", "white");
-										$(this).css("border-top-width", "1px");
-										$(this).css("padding-top", "11px");
-									}
-								);
-							}
-						});
-					}	
+				}	
 
 				//Footer adapt
-					copyrightWidthCopy = getInnerWidth("#copyright");
-					$("#copyright").width(copyrightWidthCopy);
-					clearSpacing("#socmedia");
-					$("#socmedia").width(getInnerWidth("#socmedia"));
-					leftrightAdapt("#copyright", "#socmedia", 60, function()
+				copyrightWidthCopy = getInnerWidth("#copyright");
+				$("#copyright").width(copyrightWidthCopy);
+				clearSpacing("#socmedia");
+				$("#socmedia").width(getInnerWidth("#socmedia"));
+				leftrightAdapt("#copyright", "#socmedia", 60, function()
+				{
+					if( (($("#copyright").css("float") == "none") && (copyrightWidthCopy > $("#footer").width())) )
+					{			
+						$("#copyright").css("font-size", "10px");
+						$("#copyright").width( $("#footer").width()-60 );
+					}
+					else
 					{
-						if( (($("#copyright").css("float") == "none") && (copyrightWidthCopy > $("#footer").width())) )
-						{			
-							$("#copyright").css("font-size", "10px");
-							$("#copyright").width( $("#footer").width()-60 );
-						}
-						else
-						{
-							$("#copyright").css("font-size", "12px");
-							$("#copyright").width(copyrightWidthCopy);
-						}
-					});
+						$("#copyright").css("font-size", "12px");
+						$("#copyright").width(copyrightWidthCopy);
+					}
+				});
 			}
 
 			function dynamicBackground()
@@ -211,29 +208,15 @@
 					$("#customBackground").width(screenWidth);
 				}
 			}
-		</script>
 
-		<script type="text/javascript">
 			$(window).on("load resize", function()
 			{
 				dynamicBackground();
 			});
 
-			$(window).load(function()
+			$(document).ready(function()
 			{
-				//Start resizing and adapting
 				adaptInit();
-
-				//By default the page is invisible, and this fades it in when ready.
-				setTimeout(function()
-				{
-					$("body").css("visibility", "visible");
-				    $("body").fadeTo(0, 0.0);
-				    $("body").fadeTo(700, 1);
-     				
-     				$("#content").load(currentPage + ".html", "f" + (new Date()).valueOf());
-				    readout();
-				}, 50);	
 			});
 		</script>
 			
