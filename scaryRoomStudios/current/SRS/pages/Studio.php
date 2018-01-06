@@ -1,6 +1,5 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <style type="text/css">
-
 	#content h2
 	{
 		font-family: "Open Sans";
@@ -122,13 +121,13 @@
 
 <div class="studioWrap">
 	<div class="equipBox mainbox">
-		<img src="images/content/equiptment/all.jpg?random=99.99">
+		<img src="SRS/images/content/equiptment/all.jpg?random=99.99">
 		<div>
 			The studio - where all the magic happens
 		</div>
 	</div>	
 	<div class="equipBox">
-		<img src="images/content/equiptment/shureHeadphones.jpg?random=99.99">
+		<img src="SRS/images/content/equiptment/shureHeadphones.jpg?random=99.99">
 		<div>
 			Shure Headphones
 		</div>
@@ -147,7 +146,7 @@
 		</ul>
 	</div>	
 	<div class="equipBox">
-		<img src="images/content/equiptment/bluBirdCondenser.jpg?random=99.99">
+		<img src="SRS/images/content/equiptment/bluBirdCondenser.jpg?random=99.99">
 		<div>
 			Blu Bird Condenser
 		</div>
@@ -170,13 +169,13 @@
 		</ul>
 	</div>	
 	<div class="equipBox">
-		<img src="images/content/equiptment/beatsHeadphones.jpg?random=99.99">
+		<img src="SRS/images/content/equiptment/beatsHeadphones.jpg?random=99.99">
 		<div>
 			Beats Headphones
 		</div>
 	</div>	
 	<div class="equipBox">
-		<img src="images/content/equiptment/laptop.jpg?random=99.99">
+		<img src="SRS/images/content/equiptment/laptop.jpg?random=99.99">
 		<div>
 			Editing/Productions Laptop
 		</div>
@@ -194,7 +193,7 @@
 		</ul>
 	</div>	
 	<div class="equipBox">
-		<img src="images/content/equiptment/kompleteUltimate.gif?random=99.99">
+		<img src="SRS/images/content/equiptment/kompleteUltimate.gif?random=99.99">
 		<div>
 			Komplete Ultimate Production Suite
 		</div>
@@ -220,7 +219,7 @@
 		</ul>
 	</div>	
 	<div class="equipBox">
-		<img src="images/content/equiptment/audiomixer.jpg?random=99.99">
+		<img src="SRS/images/content/equiptment/audiomixer.jpg?random=99.99">
 		<div>
 			Scarlett Focusrite Audio Interface
 		</div>
@@ -247,9 +246,9 @@
 				</ul>
 			</li>
 		</ul>
-	</div>	
+	</div>
 	<div class="equipBox">
-		<img src="images/content/equiptment/maschineStudio.jpg?random=99.99">
+		<img src="SRS/images/content/equiptment/maschineStudio.jpg?random=99.99">
 		<div>
 			Maschine Studio Productions System
 		</div>
@@ -273,4 +272,3 @@
 		</ul>
 	</div>	
 </div>
-
