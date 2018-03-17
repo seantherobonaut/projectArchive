@@ -1,0 +1,59 @@
+ajax form idea
+
+when you click on the edit button (that only appears if you are logged in and have access)
+	it modifies the values on a hidden form and toggles a popup. that gets the contents of the datatag
+
+<p id="location1">
+	<?php echo content(7)['text']?>
+</p>
+button - toggleform type, target
+
+__SERVER__ ...well I don't want to style it serverside????
+array something
+foreach()
+{
+	html = <?php rowVar = rowDataID7?>
+		<article1 rowVar_id>!!!! style everything under the id name
+			<img1 rowVar_img1>
+				<text2 rowVar_text2>
+			<img2 rowVar_img2>
+				<text3 rowVar_text3>
+		</article1>
+			<form button data>
+
+	array_push(something, html);
+
+}
+
+__CLIENT__
+styles for each id
+
+echo something[1]['content']
+	echo something[1]['form']...or a method! that will ONLY return forms if the conditions are met!
+		!!!...problem not all condtions for each paragraph are the same
+			you can solve this by making object specific permissions? adminPara, memberPara
+				maybe pass different objects to the ParaContent class to dictate how the forms behave and look
+echo something[2]
+echo something[3]
+___________________________________________________________________
+There will be no seperate html at the bottom of the page waiting to be specified by the form. 
+A javascript function will create html that will be the form. A popup. Or a box after. It does all that. 
+
+$paraContent->bundle(rowID, htmlType, formType(popup/box/etc..))
+The second and third parameters can be inserted into an array shortly after instantation of the object?
+	$paraContent->newHTMLoption("name", php object that follows an interface)
+	$paraContent->newFORMoption("name", or javascrip file)
+The permissions can be passed to the first instantiation of the object.
+Rather than having each method be wrapped in permissions, just make a new object with different permissions. Think of it this way, most
+content wrapers won't have different permssions between them unless it is user comments, you can worry about that later. 
+
+Unless specificed by methods or the constructor(bad idea), all permissions are free. They will default be true. True can mean many things, 
+it can control wether or not to display the content, control if the form toggle button is seen, and wether or not to load javascript files
+specific to each action. Headers:newjs("path/to/popup.js")(put inside the formContentClass) it will have the same function name to call it. 
+
+
+
+
+
+
+

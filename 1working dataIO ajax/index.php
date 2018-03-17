@@ -49,4 +49,20 @@
 				});
 			});
 		});
+
+/*new*/
+$(function ajaxform_reload() {
+$(document).on("submit", ".ajax_forms", function (e) {
+    e.preventDefault();
+    var url = $(this).attr('action');
+    $.ajax({
+        type: 'post',
+        url: url,
+        data: $(this).serialize(),
+        success: function (data) {
+            // DO WHAT YOU WANT WITH THE RESPONSE
+        }
+    });
+});
+});
 	</script>
