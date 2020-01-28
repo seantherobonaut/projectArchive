@@ -1,4 +1,0 @@
-basic wireframe
-colors
-content + try to make adaptive
-dynamic

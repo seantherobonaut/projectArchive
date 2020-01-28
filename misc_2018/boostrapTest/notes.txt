@@ -1,3 +1,0 @@
-responsive images
-bootstrap col/row col-sm-4 (row of small screen size and 4 columns wide)
-responsive embeds!!!! This keeps aspect ratio for videos and iframes!!!!
